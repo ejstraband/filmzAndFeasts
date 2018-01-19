@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Filmz and Feasts</title>
+<html>
+<head>
+	<title>Filmz and Feasts</title>
+	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+	<!-- link to font Awesome Libray -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!--Bootswatch link-->
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+
+	<!--Reset css file-->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+
+	<!--External css file-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!--JQuery link-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-	<header>Welcome Banner!</header>
+<div class="container">
+	<div class="row">
+    <div class="col-md-offset-6" style="text-align=center;"><p>fixed column</p></div>
+    <div id="search">Search Div</div>
+    <div class="col-md-offset-6" style="text-align=center;"><p>col</p></div>
+</div>
+<div class="row">
+    <div class="col-md-offset-6" style="text-align=center;"></div>
+    <div id="searchResult">Search Results</div>
+    <div class="col-md-offset-6" style="text-align=center;"><p>col</p></div>
+</div>
+<div class="row">
+    <div class="col-md-offset-6" style="text-align=center;"></div>
+    <div id="lastFive">Last Five</div>
+    <div class="col-md-offset-6" style="text-align=center;"><p>col</p></div>
+    <div id="stats">Stats</div>
+</div>
 
-	<div id="search">Search Div</div>
-
-	<div id="searchResult">Search Results</div>
-
-	<div id="lastFive">Last Five</div>
-
-	<div id="stats">Stats</div>
 </body>
 </html>
