@@ -22,3 +22,6 @@ var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Ch
 
   database = firebase.database();
 
+// search function
+
+// add function
