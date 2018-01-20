@@ -1,4 +1,4 @@
-// Firebase Config
+  // Firebase Config
 
 // move this into the HTML
 // <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
@@ -37,9 +37,15 @@ var searchFlick = "";
 
 function searchForFlick() {
   searchFlickRef = database.ref("movies/");
-  searchFlickRef.orderByChild("movie").equalTo(searchFlick).on("child_added", function(searchResult) {
-  // pumps out the matched movie to the console
-  console.log(searchResult.val().movie);
+  eventRef = database.ref("events/");
+  searchFlickRef.orderByChild("movie").equalTo(searchFlick).on("value", function(searchResult) {
+    // pumps out the matched movie to the console
+
+    // a.m. help from Brian
+    eventRef.orderByChild("movie").equalTo(searchFlick).on("value", function(event) {
+      console.log(event.val());
+      console.log(searchResult.val().movie);
+    })
   });
 }
 
