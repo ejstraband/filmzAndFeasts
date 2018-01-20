@@ -25,27 +25,40 @@ var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Ch
 
     var database = firebase.database();
 
+
+
 function addMovie() {
 
 	var movie = $(this).attr("placeholder");
-	var queryURL = "https://api.themoviedb.org/3/movie/550?api_key=c70bfaf171d59d60de7697bf10d02675&query=" + search;
+	var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=c70bfaf171d59d60de7697bf10d02675&query=" + "%22" + search + "%22" + "&page=1&include_adult=false";
+  console.log(queryURL);
 
 $.ajax({
-	url: queryURL,
-	method: "GET"
+  "async": true,
+  "crossDomain": true,
+	"url": queryURL,
+	"method": "GET",
+  "headers": {},
+  "data": "{}"
   }).done(function(response){
 
-	var rating = results.rating;
-	var genre = results.genres.name;
-	var releaseYear = results.release_date;
-	var trailer = results.video;
-	var poster = poster_path;
+  console.log(response);
+	// var rating = response.rating;
+ //  console.log(rating);
+	var genre = response.genres;
+  console.log("genre is" + genre);
+	var releaseYear = response.release_date;
+  console.log("release year is" + releaseYear);
+	// var trailer = response.video;
+ //  console.log(trailer);
+	var poster = response.poster_path;
+  console.log(poster);
 
 	database.ref().push({
-	    rating: rating,
+	    // rating: rating,
 	    genre: genre,
 	    releaseYear: releaseYear,
-	    trailer: trailer,
+	    // trailer: trailer,
 	    poster: poster
 	});
 
