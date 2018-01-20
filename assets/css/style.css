@@ -1,0 +1,70 @@
+.subHeader{
+	font-family: Freckle Face;
+	font-size: 22px
+}
+
+.amaticFont{
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 25px
+}	
+
+.amaticFontNB{
+	font-family: Amatic SC;
+	font-size: 20px
+}	
+
+.header{
+	height: 10rem;
+	background-color: lightblue
+}
+
+.pageContent{
+	height: 25rem
+}
+
+.footer{
+	height: 12rem;
+	background-color: lightblue
+}
+
+.lplAmatic{
+	font-family: Amatic SC; 
+	font-size: 62px 
+}
+
+.lplFreckleFace{
+	font-family: Freckle Face; 
+	font-size: 70px
+}
+
+.smLogoAmatic{
+	font-family: Amatic SC; 
+	font-size: 31px 
+}
+
+.smLogoFreckleFace{
+	font-family: Freckle Face; 
+	font-size: 35px;
+	opacity: 0.70
+}
+
+.smlFreckleFaceNO{
+	font-family: Freckle Face; 
+	font-size: 35px;
+}
+
+.shUnderline{
+	border-bottom: solid 1px lightgrey
+}
+
+.btnAmatic{
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 20px
+}
+
+.repsonsiveImg{
+	max-width: 100%; 
+	height: auto
+}
