@@ -1,0 +1,39 @@
+.subHeader{
+	font-family: Freckle Face;
+	font-size: 22px
+}
+
+.amaticFont{
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 25px
+}	
+
+.amaticFontNB{
+	font-family: Amatic SC;
+	font-size: 25px
+}	
+
+.header{
+	height: 10rem;
+	background-color: lightblue
+}
+
+.pageContent{
+	height: 25rem
+}
+
+.footer{
+	height: 12rem;
+	background-color: lightblue
+}
+
+.lplAmatic{
+	font-family: Amatic SC; 
+	font-size: 62px 
+}
+
+.lplFreckleFace{
+	font-family: Freckle Face; 
+	font-size: 70px
+}
