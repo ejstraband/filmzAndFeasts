@@ -1,17 +1,717 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Filmz and Feasts</title>
+	<title>filmzAndFEAST</title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Freckle+Face" rel="stylesheet">
+	<!-- Added firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+	<!-- Added JQuery -->
+	<script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
+
 </head>
-<body>
-	<header>Welcome Banner!</header>
+<body class=''>
+	
+	<style type="text/css">
+	
+	.subHeader{
+		font-family: Freckle Face;
+		font-size: 22px
+	}
 
-	<div id="search">Search Div</div>
+	.amaticFont{
+		font-family: Amatic SC;
+		font-weight: bold;
+		font-size: 25px
+	}	
 
-	<div id="searchResult">Search Results</div>
+	.amaticFontNB{
+		font-family: Amatic SC;
+		font-size: 25px
+	}	
 
-	<div id="lastFive">Last Five</div>
+</style>
 
-	<div id="stats">Stats</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+
+
+
+
+<!-- The Landing Page -->
+
+
+
+<div id='landingPage' class=' container-fluid m-0 p-0 '>
+	<div class='row '>
+		<div class='col-md-12' style="height: 10rem; background-color: lightblue">
+			<div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-11 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 62px ">flickz+</span><span style="font-family: Freckle Face; font-size: 70px">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- The Statz Page -->
+
+
+
+
+
+<div id="statzPage" class='container-fluid m-0 p-0 '>
+	<div class='row ' style="height: 10rem; background-color: lightblue" >
+		<div class='col-md-11 d-flex' >
+			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 31px ">flickz+</span><span style="font-family: Freckle Face; font-size: 35px; opacity: 0.70">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<div style="border-bottom: solid 1px lightgrey">
+						<span style="font-family: Amatic SC; font-size: 31px ">the </span><span style="font-family: Freckle Face;  font-size: 35px"> STATZ</span>
+					</div>
+					<select class="custom-select mb-3 border-0 amaticFont">
+						<option selected >Members</option>
+						<option value="1">All</option>
+						<option value="2">Eric</option>
+						<option value="3">Eric's Wife</option>
+						<option value="4">Eric's Friend</option>
+						<option value="5">Eric's Frienemy </option>
+					</select><br>
+					<select class="custom-select mb-3 border-0 amaticFont">
+						<option selected>Rating</option>
+						<option value="1">G</option>
+						<option value="2">PG-13</option>
+						<option value="3">R</option>
+						<option value="4">NR</option>
+						<option value="5">X</option>
+					</select><br>
+					<select class="custom-select mb-3 border-0 amaticFont" style="font-size: 25px">
+						<option selected>Year</option>
+						<option value="1">2017</option>
+						<option value="2">2016</option>
+						<option value="3">2015</option>
+						<option value="4">2014</option>
+						<option value="5">2012</option>
+						<option value="5">2011</option>
+						<option value="5">2010</option>
+						<option value="5">2009</option>
+						<option value="5">2008</option>
+						<option value="5">2007</option>
+						<option value="5">2006</option>
+						<option value="5">Realy?!</option>
+					</select><br>
+					<select class="custom-select  mb-3 border-0 amaticFont">
+						<option selected>Genre</option>
+						<option value="1">Action</option>
+						<option value="2">Adventure </option>
+						<option value="3">Comedies</option>
+						<option value="4">Crime</option>
+						<option value="5">Drama</option>
+						<option value="5">etc...</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div >
+					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11 p-0' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- The List Page -->
+
+
+
+
+
+<div id="listPage" class='container-fluid m-0 p-0 '>
+	<div class='row ' style="height: 10rem; background-color: lightblue" >
+		<div class='col-md-11 d-flex' >
+			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 31px ">flickz+</span><span style="font-family: Freckle Face; font-size: 35px; opacity: 0.70">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-3 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<div  class="mb-3" style="border-bottom: solid 1px lightgrey">
+						<span style="font-family: Amatic SC; font-size: 31px ">the </span><span style="font-family: Freckle Face; font-size: 35px">LIST</span>
+					</div>
+					<form>
+						<div>
+							<input type="movie" class="form-control border-0 mb-3 amaticFont" style="font-size: 25px" id="" placeholder="Movie Selection"></input>
+						</div>
+						<div >
+							<button type="submit" class="btn btn-light amaticFont" style="font-size: 20px">Search</button>
+							<button type="submit" class="btn btn-light amaticFont" style="font-size: 20px">Add</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-7 d-flex' style="height: 25rem">
+			<div class="table-responsive w-100 p-0 m-0 d-flex align-items-center">
+				<table class="table ">
+					<thead class="amaticFont">
+						<tr>
+							<th>Movie</th>
+							<th>Rating</th>
+							<th>Year</th>
+							<th>Genre</th>
+							<th>Picked</th>
+							<th>Watched</th>
+						</tr>
+					</thead>
+					<tbody class="amaticFontNB " style="font-size: 20px">
+						<tr>
+							<td>the Terminator</td>
+							<td>R</td>
+							<td>1984</td>
+							<td>Action</td>
+							<td>Eric's Frienemy</td>
+							<td>Sept 16 2015</td>
+						</tr>
+						<tr>
+							<td>When Harry Met Sally</td>
+							<td>PG-13</td>
+							<td>1989</td>
+							<td>Rom Com</td>
+							<td>Eric's Wife</td>
+							<td>Nov 9 2015</td>
+						</tr>
+						<tr>
+							<td>Bill & Ted's Excellent Adventure</td>
+							<td>PG</td>
+							<td>1989</td>
+							<td>Adventure</td>
+							<td>Eric</td>
+							<td>Dec 3 2015</td>
+						</tr>
+						<tr>
+							<td>Equilibrium</td>
+							<td>R</td>
+							<td>2002</td>
+							<td>Sci Fi</td>
+							<td>Eric's Friend</td>
+							<td>Jan 26 2016</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11 p-0' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- the Last 4 Page -->
+
+
+
+
+
+<div id="last4Page" class='container-fluid m-0 p-0 '>
+	<div class='row ' style="height: 10rem; background-color: lightblue" >
+		<div class='col-md-11 d-flex' >
+			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 31px ">flickz+</span><span style="font-family: Freckle Face; font-size: 35px; opacity: 0.70">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-2 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<div style="border-bottom: solid 1px lightgrey">
+						<span style="font-family: Amatic SC; font-size: 31px ">the </span><span style="font-family: Freckle Face; font-size: 35px"> LAST 4</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-8 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class="row">
+					<div class='col-md-3'>	
+						<div>
+							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+						</div>
+					</div>
+					<div class='col-md-3'>	
+						<div>
+							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+						</div>
+					</div>
+					<div class='col-md-3'>	
+						<div>
+							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+						</div>
+					</div>
+					<div class='col-md-3'>	
+						<div>
+							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11 p-0' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- The Calendar Page -->
+
+
+
+
+<div id="calendarPage" class='container-fluid m-0 p-0 '>
+	<div class='row ' style="height: 10rem; background-color: lightblue" >
+		<div class='col-md-11 d-flex' >
+			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 31px ">flickz+</span><span style="font-family: Freckle Face; font-size: 35px; opacity: 0.70">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<div style="border-bottom: solid 1px lightgrey">
+						<span style="font-family: Amatic SC; font-size: 31px ">the </span><span style="font-family: Freckle Face; font-size: 35px"> CALENDAR</span>
+					</div>
+					<select class="custom-select mb-1 border-0 amaticFont">
+						<option selected >the Host</option>
+						<option value="2">Eric</option>
+						<option value="3">Eric's Wife</option>
+						<option value="4">Eric's Friend</option>
+						<option value="5">Eric's Frienemy </option>
+					</select>
+					<form>
+						<div>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" style="font-size: 25px" id="" placeholder="Add New Host"></input>
+						</div>
+						<div>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" style="font-size: 25px" id="" placeholder="Movie Choice"></input>
+						</div>
+						<div>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" style="font-size: 25px" id="" placeholder="Pick Date"></input>
+						</div>
+						<div >
+							<button type="submit" class="btn btn-light amaticFont" style="font-size: 20px">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div >
+					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11 p-0' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+<!-- the Memebers Page -->
+
+
+
+
+<div id="memebersPage" class='container-fluid m-0 p-0 '>
+	<div class='row ' style="height: 10rem; background-color: lightblue" >
+		<div class='col-md-11 d-flex' >
+			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 31px ">flickz+</span><span style="font-family: Freckle Face; font-size: 35px; opacity: 0.70">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<div style="border-bottom: solid 1px lightgrey">
+						<span style="font-family: Amatic SC; font-size: 31px ">the </span><span style="font-family: Freckle Face; font-size: 35px"> MEMEBERZ</span>
+					</div>
+					<select class="custom-select mb-1 border-0 amaticFont">
+						<option selected >Name</option>
+						<option value="2">Eric</option>
+						<option value="3">Eric's Wife</option>
+						<option value="4">Eric's Friend</option>
+						<option value="5">Eric's Frienemy </option>
+					</select>
+					<form>
+						<div>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" style="font-size: 25px" id="" placeholder="Favorite Movie"></input>
+						</div>
+						<div>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" style="font-size: 25px" id="" placeholder="Most Hated Movie"></input>
+						</div>
+						<div>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" style="font-size: 25px" id="" placeholder="Last Picked Movie"></input>
+						</div>
+						<div >
+							<button type="submit" class="btn btn-light amaticFont" style="font-size: 20px">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div >
+					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11 p-0' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- The Last 4 trailer preview -->
+
+
+
+
+<div id="last4TrailerPage" class='container-fluid m-0 p-0 '>
+	<div class='row ' style="height: 10rem; background-color: lightblue" >
+		<div class='col-md-11 d-flex' >
+			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
+				<div class='ml-auto'>
+					<span style="font-family: Amatic SC; font-size: 31px ">flickz+</span><span style="font-family: Freckle Face; font-size: 35px; opacity: 0.70">FEAST</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' >
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-3 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<div style="border-bottom: solid 1px lightgrey">
+						<span style="font-family: Amatic SC; font-size: 31px ">the </span><span style="font-family: Freckle Face; font-size: 35px"> TRAILERZ</span>
+						
+					</div>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-7 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class="ml-auto" >
+					<a href="https://placeholder.com"><img src="http://via.placeholder.com/750x350" class='img-fluid img-thumbnail' style="max-width: 100%; height: auto;"></a>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex' style="height: 25rem">
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row' style="height: 12rem; background-color: lightblue">
+		<div class='col-md-11 p-0' >
+			<nav class="navbar navbar-expand-lg navbar-light  navbar-right ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
+					<ul class="navbar-nav ml-auto ">
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link" href="#">the list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">statz</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">last 4</a>
+						</li>
+						<li class="nav-item amaticFont pl-4 pr-4">
+							<a class="nav-link " href="#">member list</a>
+						</li>
+						<li class="nav-item amaticFont pl-4" >
+							<a class="nav-link " href="#">calander</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+<!-- added our Javascript -->
+<script type="text/javascript" src="assets/javascript/filmz.js"></script>
+
 </body>
 </html>
