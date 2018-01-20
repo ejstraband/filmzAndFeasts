@@ -1,3 +1,4 @@
+
   // Firebase Config
 
 // move this into the HTML
@@ -9,8 +10,9 @@ var newMovie;
 var currentDate;
 var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Chad"];
 
+
   // Initialize Firebase
-  var config = {
+   var config = {
     apiKey: "AIzaSyAWficuLo5fXsnKYUaF13DtDAulrtv9DPU",
     authDomain: "filmzandfeasts.firebaseapp.com",
     databaseURL: "https://filmzandfeasts.firebaseio.com",
@@ -18,9 +20,53 @@ var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Ch
     storageBucket: "filmzandfeasts.appspot.com",
     messagingSenderId: "168990079713"
   };
-  firebase.initializeApp(config);
 
-  database = firebase.database();
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+
+function addMovie() {
+
+	var movie = $(this).attr("placeholder");
+	var queryURL = "https://api.themoviedb.org/3/movie/550?api_key=c70bfaf171d59d60de7697bf10d02675&query=" + search;
+
+$.ajax({
+	url: queryURL,
+	method: "GET"
+}).done(function(response){
+
+	var rating = results.rating;
+	var genre = results.genres.name;
+	var releaseYear = results.release_date;
+	var trailer = results.video;
+	var poster = poster_path;
+
+	database.ref().push({
+	    rating: rating,
+	    genre: genre,
+	    releaseYear: releaseYear,
+	    trailer: trailer
+	    poster: poster
+	});
+
+	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+		  console.log(childSnapshot.val());
+
+		  var rating = childSnapshot.val().rating;
+		  var genre = childSnapshot.val().genre;
+		  var releaseYear = childSnapshot.val().releaseYear;
+		  var trailer = childSnapshot.val().trailer;
+		  var poster = childSnapshot.val().poster;
+
+		  console.log(rating);
+		  console.log(genre);
+		  console.log(releaseYear);
+		  console.log(trailer);
+		  console.log(poster);
+
+        
+});
 
 // search functions
 // got a lot of help from https://www.tutorialspoint.com/firebase/firebase_queries.htm
@@ -61,16 +107,6 @@ function displayEvent() {
   });
 }
 
-
-
-
-
-
-
-
-
-
-
 // add event function
 var date;
 var host;
@@ -93,32 +129,14 @@ database.ref().child('events').push({
 }
 
 
-
-
-
-
-
-
-
-// add movie function
-var genre;
-var poster;
-var rating;
-var synopsis;
-
-// testing variables
-// genre = "awesome";
-// rating = "PG-13";
-// synopsis = "everyone should love this";
-// poster = "www.htd.com"
-
-function addMovie() {
-database.ref().child('movies').push({
-  genre: genre,
-  movie: movie,
-  notes: notes,
-  poster: poster,
-  rating: rating,
-  synopsis: synopsis
-  });
-}
+// Eric's add movie. Delete if not needed
+// function addMovie() {
+// database.ref().child('movies').push({
+//   genre: genre,
+//   movie: movie,
+//   notes: notes,
+//   poster: poster,
+//   rating: rating,
+//   synopsis: synopsis
+//   });
+// }
