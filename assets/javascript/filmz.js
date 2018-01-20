@@ -22,6 +22,97 @@ var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Ch
 
   database = firebase.database();
 
-// search function
+// search functions
+// got a lot of help from https://www.tutorialspoint.com/firebase/firebase_queries.htm
 
-// add function
+// Test Variables
+  // successful (movie IN the d.b.)
+  // searchFlick = "Mud";
+
+  // fail (movie NOT IN the d.b.)
+  // searchFlick = "Legend";
+
+// Search for the movie in the events part of the database
+var searchFlick = "";
+
+function searchForFlick() {
+  searchFlickRef = database.ref("movies/");
+  searchFlickRef.orderByChild("movie").equalTo(searchFlick).on("child_added", function(searchResult) {
+  // pumps out the matched movie to the console
+  console.log(searchResult.val().movie);
+  });
+}
+
+// console.log an event record
+var searchEvent = "";
+
+function displayEvent(searchEvent) {
+
+  var eventRef = database.ref("events/");
+  // searchEventRef.orderByChild("event").equalTo(searchEvent).on("child_added", function(searchResult) {
+  eventRef.on("value", function(snapshot) {
+  console.log(snapshot.val());
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+// add event function
+var date;
+var host;
+var movie;
+var notes;
+
+// testing variables
+// date = "1/1/3001";
+// host = "chuck";
+// movie = "howard the duck";
+// notes = "console invoked";
+
+function addEvent() {
+database.ref().child('events').push({
+  date: date,
+  host: host,
+  movie: movie,
+  notes: notes
+  });
+}
+
+
+
+
+
+
+
+
+
+// add movie function
+var genre;
+var poster;
+var rating;
+var synopsis;
+
+// testing variables
+// genre = "awesome";
+// rating = "PG-13";
+// synopsis = "everyone should love this";
+// poster = "www.htd.com"
+
+function addMovie() {
+database.ref().child('movies').push({
+  genre: genre,
+  movie: movie,
+  notes: notes,
+  poster: poster,
+  rating: rating,
+  synopsis: synopsis
+  });
+}
