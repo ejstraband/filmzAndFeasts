@@ -11,15 +11,15 @@ var currentDate;
 var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Chad"];
 
 
-  // Initialize Firebase
-   var config = {
-    apiKey: "AIzaSyAWficuLo5fXsnKYUaF13DtDAulrtv9DPU",
-    authDomain: "filmzandfeasts.firebaseapp.com",
-    databaseURL: "https://filmzandfeasts.firebaseio.com",
-    projectId: "filmzandfeasts",
-    storageBucket: "filmzandfeasts.appspot.com",
-    messagingSenderId: "168990079713"
-  };
+// Initialize Firebase
+ var config = {
+  apiKey: "AIzaSyAWficuLo5fXsnKYUaF13DtDAulrtv9DPU",
+  authDomain: "filmzandfeasts.firebaseapp.com",
+  databaseURL: "https://filmzandfeasts.firebaseio.com",
+  projectId: "filmzandfeasts",
+  storageBucket: "filmzandfeasts.appspot.com",
+  messagingSenderId: "168990079713"
+};
 
     firebase.initializeApp(config);
 
@@ -33,7 +33,7 @@ function addMovie() {
 $.ajax({
 	url: queryURL,
 	method: "GET"
-}).done(function(response){
+  }).done(function(response){
 
 	var rating = results.rating;
 	var genre = results.genres.name;
@@ -45,28 +45,31 @@ $.ajax({
 	    rating: rating,
 	    genre: genre,
 	    releaseYear: releaseYear,
-	    trailer: trailer
+	    trailer: trailer,
 	    poster: poster
 	});
 
 	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-		  console.log(childSnapshot.val());
+	  console.log(childSnapshot.val());
 
-		  var rating = childSnapshot.val().rating;
-		  var genre = childSnapshot.val().genre;
-		  var releaseYear = childSnapshot.val().releaseYear;
-		  var trailer = childSnapshot.val().trailer;
-		  var poster = childSnapshot.val().poster;
+	  var rating = childSnapshot.val().rating;
+	  var genre = childSnapshot.val().genre;
+    var releaseYear = childSnapshot.val().releaseYear;
+	  var trailer = childSnapshot.val().trailer;
+    var poster = childSnapshot.val().poster;
 
-		  console.log(rating);
-		  console.log(genre);
-		  console.log(releaseYear);
-		  console.log(trailer);
-		  console.log(poster);
+		console.log(rating);
+		console.log(genre);
+		console.log(releaseYear);
+		console.log(trailer);
+		console.log(poster);
+  });
 
-        
 });
+
+}
+
 
 // search functions
 // got a lot of help from https://www.tutorialspoint.com/firebase/firebase_queries.htm
