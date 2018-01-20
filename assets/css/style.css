@@ -11,7 +11,7 @@
 
 .amaticFontNB{
 	font-family: Amatic SC;
-	font-size: 25px
+	font-size: 20px
 }	
 
 .header{
@@ -36,4 +36,35 @@
 .lplFreckleFace{
 	font-family: Freckle Face; 
 	font-size: 70px
+}
+
+.smLogoAmatic{
+	font-family: Amatic SC; 
+	font-size: 31px 
+}
+
+.smLogoFreckleFace{
+	font-family: Freckle Face; 
+	font-size: 35px;
+	opacity: 0.70
+}
+
+.smlFreckleFaceNO{
+	font-family: Freckle Face; 
+	font-size: 35px;
+}
+
+.shUnderline{
+	border-bottom: solid 1px lightgrey
+}
+
+.btnAmatic{
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 20px
+}
+
+.repsonsiveImg{
+	max-width: 100%; 
+	height: auto
 }
