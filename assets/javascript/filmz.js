@@ -46,12 +46,12 @@ function searchForFlick() {
 // console.log an event record
 var searchEvent = "";
 
-function displayEvent(searchEvent) {
+function displayEvent() {
 
   var eventRef = database.ref("events/");
   // searchEventRef.orderByChild("event").equalTo(searchEvent).on("child_added", function(searchResult) {
-  eventRef.on("value", function(snapshot) {
-  console.log(snapshot.val());
+  eventRef.orderByKey().on("child_added", function(snapshot) {
+  console.log(snapshot.key);
   });
 }
 
