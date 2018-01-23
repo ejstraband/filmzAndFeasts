@@ -25,12 +25,12 @@
 			#calendar
 			#add -->
 
-
+<!-- 
 The Landing Page
 		container
 			#landingPage
 		responsive button compresed
-			#tinyList
+			#tinyList -->
 
 
 
@@ -90,16 +90,16 @@ The Landing Page
 
 <!-- The Statz Page
 		container
-			statzPage
+			#statzPage
 		dropdowns
-			statz-member-dd
-			statz-rating-dd
-			statz-year-dd
-			statz-genre-dd
+			#statz-member-dd
+			#statz-rating-dd
+			#statz-year-dd
+			#statz-genre-dd
 		statz hyperlink
-			statz-hl
+			#statz-hl
 		stats img
-			statz-img -->
+			#statz-img -->
 
 
 
@@ -220,13 +220,13 @@ The Landing Page
 
 <!-- The List Page
 		container
-			listPage
+			#listPage
 		movie input
-			list-movie-selection
+			#list-movie-selection
 		search button
-			search-btn
+			#search-btn
 		table
-			list-table -->
+			#list-table -->
 
 
 
@@ -343,8 +343,19 @@ The Landing Page
 
 
 
-<!-- the Last 4 Page -->
-
+<!-- the Last 4 Page
+		container
+			#last4Page
+		image boxes
+			#img-num1
+			#img-num2
+			#img-num3
+			#img-num4
+		image boxes hyperlink
+			#img-hl1
+			#img=hl2
+			#img=hl3
+			#img=hl4 -->
 
 
 
@@ -380,22 +391,22 @@ The Landing Page
 				<div class="row">
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img-hl1"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num1"></a>
 						</div>
 					</div>
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img=hl2"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num2"></a>
 						</div>
 					</div>
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img=hl3"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num3"></a>
 						</div>
 					</div>
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img=hl4"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num4"></a>
 						</div>
 					</div>
 				</div>
@@ -444,7 +455,20 @@ The Landing Page
 
 
 
-<!-- The Calendar Page -->
+<!-- The Calendar Page
+		container
+			#calendarPage
+		dropdown
+			#calendar-host-dd
+		inputs
+			#calendar-add-new-host
+			#calendar-movie-choice
+			#calendar-pick-date
+		button
+			#calendar-edit-button 
+		hyperlink
+			calendar-hl-->
+
 
 
 
@@ -472,7 +496,7 @@ The Landing Page
 					<div class="shUnderline">
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> CALENDAR</span>
 					</div>
-					<select class="custom-select mb-1 border-0 amaticFont">
+					<select class="custom-select mb-1 border-0 amaticFont" id="calendar-host-dd">
 						<option selected >the Host</option>
 						<option value="2">Eric</option>
 						<option value="3">Eric's Wife</option>
@@ -481,16 +505,16 @@ The Landing Page
 					</select>
 					<form>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Add New Host"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="calendar-add-new-host" placeholder="Add New Host"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Movie Choice"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="calendar-movie-choice" placeholder="Movie Choice"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Pick Date"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="calendar-pick-date" placeholder="Pick Date"></input>
 						</div>
 						<div >
-							<button type="submit" class="btn btn-light btnAmatic">Edit</button>
+							<button type="submit" class="btn btn-light btnAmatic" id="calendar-edit-button">Edit</button>
 						</div>
 					</form>
 				</div>
@@ -499,7 +523,7 @@ The Landing Page
 		<div class='col-md-5 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com" id="calendar-hl"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
 				</div>
 			</div>
 		</div>
@@ -544,7 +568,19 @@ The Landing Page
 </div>
 
 
-<!-- the Memebers Page -->
+<!-- the Memebers Page
+		container
+			#memebersPage
+		drop downs
+			#members-name-dd
+		imputs
+			#members-fav-movie
+			#members-most-hate-movie
+			#members-last-pick-movie
+		button
+			#members-edit-btn
+		image
+			#member-img -->
 
 
 
@@ -572,7 +608,7 @@ The Landing Page
 					<div class="shUnderline">
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> MEMEBERZ</span>
 					</div>
-					<select class="custom-select mb-1 border-0 amaticFont">
+					<select class="custom-select mb-1 border-0 amaticFont" id="members-name-dd">
 						<option selected >Name</option>
 						<option value="2">Eric</option>
 						<option value="3">Eric's Wife</option>
@@ -581,16 +617,16 @@ The Landing Page
 					</select>
 					<form>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Favorite Movie"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="members-fav-movie" placeholder="Favorite Movie"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Most Hated Movie"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="members-most-hate-movie" placeholder="Most Hated Movie"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Last Picked Movie"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="members-last-pick-movie" placeholder="Last Picked Movie"></input>
 						</div>
 						<div >
-							<button type="submit" class="btn btn-light btnAmatic">Edit</button>
+							<button type="submit" class="btn btn-light btnAmatic" id="members-edit-btn">Edit</button>
 						</div>
 					</form>
 				</div>
@@ -599,7 +635,7 @@ The Landing Page
 		<div class='col-md-5 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg' id="member-img"></a>
 				</div>
 			</div>
 		</div>
@@ -646,8 +682,13 @@ The Landing Page
 
 
 
-<!-- The Last 4 trailer preview -->
-
+<!-- The Last 4 trailer preview
+		container
+			#last4TrailerPage
+		paragraph
+			#trailerz-movie-info
+		hyper link
+			#trailerz-movie-clip -->
 
 
 
@@ -675,14 +716,14 @@ The Landing Page
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> TRAILERZ</span>
 						
 					</div>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p id="trailerz-movie-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 			</div>
 		</div>
 		<div class='col-md-7 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div class="ml-auto" >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/750x350" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com" id="trailerz-movie-clip"><img src="http://via.placeholder.com/750x350" class='img-fluid img-thumbnail repsonsiveImg'></a>
 				</div>
 			</div>
 		</div>
@@ -729,13 +770,21 @@ The Landing Page
 
 
 
-<!-- the ADD page -->
+<!-- the ADD page
+		container
+			#addPage
+		drop down
+			#add-host-dd
+		inputs
+			#add-title
+			#add-date
+		buttons
+			#add-btn -->
 
 
 
 
-
-<div id="memebersPage" class='container-fluid m-0 p-0 '>
+<div id="addPage" class='container-fluid m-0 p-0 '>
 	<div class='row header'>
 		<div class='col-md-11 d-flex' >
 			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
