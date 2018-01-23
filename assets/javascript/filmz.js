@@ -94,15 +94,15 @@ $.ajax({
   // fail (movie NOT IN the d.b.)
   // searchFlick = "Legend";
 
-var matchedTitle = null;
-var watchedDate = null;
-var matchedHost = null;
-var referenceNotes = null;
+var matchedTitle = undefined;
+var watchedDate = undefined;
+var matchedHost = undefined;
+var referenceNotes = undefined;
 // Search for the movie in the events part of the database
 var searchFlick = "Team America: World Police";
 
 function searchForFlick() {
-  searchFlickRef = database.ref("movies/");
+  searchFlickRef = database.ref("events/");
   searchFlickRef.orderByChild("movie").equalTo(searchFlick).on("child_added", function(searchResult) {
   // pumps out the matched movie to the console
   databaseSearchResult = searchResult.val().movie;
@@ -123,18 +123,20 @@ function searchForFlick() {
         console.log("Host: " + matchedHost);
         referenceNotes = searchResult.val().notes;
         console.log("Notes: " + referenceNotes);
+        alertFunction();
       });
   });
 }
 
 function alertFunction() {
-  if (matchedTitle === null) {
+  if (matchedTitle === undefined) {
   alert("new movie");
 } else {
   alert("movie matched");
   }
 }
 
+searchForFlick();
 
 
 // add event function
