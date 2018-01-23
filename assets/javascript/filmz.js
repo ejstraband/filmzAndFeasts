@@ -1,4 +1,3 @@
-
   // Firebase Config
 
 // move this into the HTML
@@ -30,7 +29,7 @@ var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Ch
 function addMovie() {
 
 	var movie = $(this).attr("placeholder");
-	var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=c70bfaf171d59d60de7697bf10d02675&query=" + "%22" + search + "%22" + "&page=1&include_adult=false";
+	var queryURL = "http://www.omdbapi.com/?t=" + search + "&apikey=30d5e4a1";
   console.log(queryURL);
 
 $.ajax({
@@ -43,22 +42,22 @@ $.ajax({
   }).done(function(response){
 
   console.log(response);
-	// var rating = response.rating;
- //  console.log(rating);
-	var genre = response.genres;
+	var rated = response.rated;
+  console.log(rating);
+	var genre = response.genre;
   console.log("genre is" + genre);
-	var releaseYear = response.release_date;
+	var releaseYear = response.year;
   console.log("release year is" + releaseYear);
-	// var trailer = response.video;
- //  console.log(trailer);
-	var poster = response.poster_path;
+	var plot = response.plot;
+  console.log(plot);
+	var poster = response.poster;
   console.log(poster);
 
 	database.ref().push({
-	    // rating: rating,
+	    rated: rated,
 	    genre: genre,
 	    releaseYear: releaseYear,
-	    // trailer: trailer,
+	    plot: plot,
 	    poster: poster
 	});
 
@@ -66,16 +65,16 @@ $.ajax({
 
 	  console.log(childSnapshot.val());
 
-	  var rating = childSnapshot.val().rating;
+	  var rating = childSnapshot.val().rated;
 	  var genre = childSnapshot.val().genre;
     var releaseYear = childSnapshot.val().releaseYear;
-	  var trailer = childSnapshot.val().trailer;
+	  var trailer = childSnapshot.val().plot;
     var poster = childSnapshot.val().poster;
 
-		console.log(rating);
+		console.log(rated);
 		console.log(genre);
 		console.log(releaseYear);
-		console.log(trailer);
+		console.log(plot);
 		console.log(poster);
   });
 
