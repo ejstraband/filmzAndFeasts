@@ -98,7 +98,7 @@ var watchedDate = undefined;
 var matchedHost = undefined;
 var referenceNotes = undefined;
 // Search for the movie in the events part of the database
-var searchFlick = "Team America: World Police";
+var searchFlick;
 
 function searchForFlick() {
   searchFlickRef = database.ref("events/");
@@ -125,13 +125,13 @@ function searchForFlick() {
         console.log("Host: " + matchedHost);
         referenceNotes = searchResult.val().notes;
         console.log("Notes: " + referenceNotes);
-        alertFunction();
       });
   });
+    alertFunction();
 }
 
 function alertFunction() {
-  if (matchedTitle === undefined) {
+  if (matchedTitle) {
   alert("new movie");
 } else {
   alert("movie matched");
