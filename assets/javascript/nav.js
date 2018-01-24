@@ -8,59 +8,60 @@
 // });
 // }
 
-// // Make only the landing page show up.
+// Make only the landing page show up.
 // hideAllDiv();
 // $('#landingPage').show();
 // });
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-console.log('joy!');
+// console.log('joy!');
 
-});
-create a function to hide all divs
+// create a function to hide all divs
 function hideAllDiv(){
-$('#statzPage, #listPage, #last4Page, #calendarPage, #membersPage, #last4TrailerPage, #landingPage').each(function() {
+$('#statzPage, #listPage, #last4Page, #calendarPage, #memebersPage, #last4TrailerPage, #landingPage, #addPage').each(function() {
 	$(this).hide();
-};
-
+});
+}
 // // Make only the landing page show up.
 
 // // When a link is clicked, hide the currently visible page and display the clicked pg
 
+hideAllDiv();
+$('#landingPage').show();
+// });
 
-$("#statzPage-link").on("click", function() {
-   hideAllDiv();
-   $("#statzPage").show();
-   $("#navFooter").show();
-   console.log(hideAllDiv);
+// $("#statzPage").on("click", function() {
+//    hideAllDiv();
+//    $("#statzPage").show();
+// });
 
-$("#listPage-link").click(function() {
-    hideAllDiv();
-   $("#listPage").show();
-});
+// $("#listPage").click(function() {
+//     hideAllDiv();
+//    $("#listPage").show();
+// });
 
-$("#last4-link").click(function() {
-    hideAllDiv();
-   $("#last4Page").show();
+// $("#last4Page").click(function() {
+//     hideAllDiv();
+//    $("#last4Page").show();
 
-});
+// });
 
-$("#membersPage-link").click(function() {
-   hideAllDiv();
-   $("#membersPage").show();
-});
+// $("#membersPage").click(function() {
+//    hideAllDiv();
+//    $("#membersPage").show();
+// });
 
-$("#calendarPage-link").click(function() {
-    hideAllDiv();
-   $("#calendarPage").show();
-});
+// $("#calendarPage").click(function() {
+//     hideAllDiv();
+//    $("#calendarPage").show();
+// });
 
-$("#addMovie-link").click(function() {
-    hideAllDiv();
-   $("#addPage").show();
-});
+// $("#addPage").click(function() {
+//     hideAllDiv();
+//    $("#addPage").show();
+// });
 
 
 // click event for button when user clicks it to remove/add movie from the list

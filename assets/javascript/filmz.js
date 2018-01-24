@@ -98,7 +98,7 @@ var watchedDate = undefined;
 var matchedHost = undefined;
 var referenceNotes = undefined;
 // Search for the movie in the events part of the database
-var searchFlick;
+var searchFlicks;
 
 function searchForFlick() {
   searchFlickRef = database.ref("events/");
