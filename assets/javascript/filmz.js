@@ -103,6 +103,9 @@ var searchFlick = "Team America: World Police";
 
 function searchForFlick() {
   searchFlickRef = database.ref("events/");
+
+  console.log(searchFlickRef.orderByChild("movie").equalTo(searchFlick).toJSON());
+
   searchFlickRef.orderByChild("movie").equalTo(searchFlick).on("child_added", function(searchResult) {
   // pumps out the matched movie to the console
   databaseSearchResult = searchResult.val().movie;
