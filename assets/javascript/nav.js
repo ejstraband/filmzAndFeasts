@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-console.log('JOY!');
+// console.log('JOY!');
 
 function hideAllDiv(){
 $('#statzPage, #listPage, #last4Page, #calendarPage, #memebersPage, #last4TrailerPage, #landingPage').each(function() {
