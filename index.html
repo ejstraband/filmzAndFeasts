@@ -16,8 +16,22 @@
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
+<!-- Footer
+		data-page
+			#listPage
+			#statz
+			#last4Page
+			#membersPage
+			#calendar
+			#add -->
 
-<!-- The Landing Page -->
+<!-- 
+The Landing Page
+		container
+			#landingPage
+		responsive button compresed
+			#tinyList -->
+
 
 
 
@@ -40,7 +54,7 @@
 	<div class='row footer'>
 		<div class='col-md-11' >
 			<nav class="navbar navbar-expand-lg navbar-light  navbar-right">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button id="tinyList" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
@@ -61,7 +75,7 @@
 							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -71,9 +85,21 @@
 </div>
 
 
-<!-- The Statz Page -->
 
 
+
+<!-- The Statz Page
+		container
+			#statzPage
+		dropdowns
+			#statz-member-dd
+			#statz-rating-dd
+			#statz-year-dd
+			#statz-genre-dd
+		statz hyperlink
+			#statz-hl
+		stats img
+			#statz-img -->
 
 
 
@@ -100,7 +126,7 @@
 					<div class="shUnderline">
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> STATZ</span>
 					</div>
-					<select class="custom-select mb-3 border-0 amaticFont">
+					<select id="statz-member-dd" class="custom-select mb-3 border-0 amaticFont">
 						<option selected >Members</option>
 						<option value="1">All</option>
 						<option value="2">Eric</option>
@@ -108,7 +134,7 @@
 						<option value="4">Eric's Friend</option>
 						<option value="5">Eric's Frienemy </option>
 					</select><br>
-					<select class="custom-select mb-3 border-0 amaticFont">
+					<select id="statz-rating-dd" class="custom-select mb-3 border-0 amaticFont">
 						<option selected>Rating</option>
 						<option value="1">G</option>
 						<option value="2">PG-13</option>
@@ -116,7 +142,7 @@
 						<option value="4">NR</option>
 						<option value="5">X</option>
 					</select><br>
-					<select class="custom-select mb-3 border-0 amaticFont">
+					<select id="statz-year-dd" class="custom-select mb-3 border-0 amaticFont">
 						<option selected>Year</option>
 						<option value="1">2017</option>
 						<option value="2">2016</option>
@@ -131,7 +157,7 @@
 						<option value="5">2006</option>
 						<option value="5">Realy?!</option>
 					</select><br>
-					<select class="custom-select  mb-3 border-0 amaticFont">
+					<select id="statz-genre-dd" class="custom-select  mb-3 border-0 amaticFont">
 						<option selected>Genre</option>
 						<option value="1">Action</option>
 						<option value="2">Adventure </option>
@@ -146,7 +172,7 @@
 		<div class='col-md-5 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com" id="statz-hl"><img src="http://via.placeholder.com/550x300" id="statz-img" class='img-fluid img-thumbnail repsonsiveImg'></a>
 				</div>
 			</div>
 		</div>
@@ -166,22 +192,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -192,9 +218,15 @@
 
 
 
-<!-- The List Page -->
-
-
+<!-- The List Page
+		container
+			#listPage
+		movie input
+			#list-movie-selection
+		search button
+			#search-btn
+		table
+			#list-table -->
 
 
 
@@ -223,11 +255,11 @@
 					</div>
 					<form>
 						<div>
-							<input type="movie" class="form-control border-0 mb-3 amaticFont" id="" placeholder="Movie Selection"></input>
+							<input id="list-movie-selection" type="movie" class="form-control border-0 mb-3 amaticFont" id="" placeholder="Movie Selection"></input>
 						</div>
 						<div >
-							<button type="submit" class="btn btn-light btnAmatic">Search</button>
-							<button type="submit" class="btn btn-light btnAmatic">Add</button>
+							<button id="search-btn" type="submit" class="btn btn-light btnAmatic">Search</button>
+						
 						</div>
 					</form>
 				</div>
@@ -239,33 +271,28 @@
 					<thead class="amaticFont">
 						<tr>
 							<th>Movie</th>
-							
 							<th>Picked</th>
 							<th>Watched</th>
 						</tr>
 					</thead>
-					<tbody class="amaticFontNB">
+					<tbody id="list-table" class="amaticFontNB">
 						<tr>
 							<td>the Terminator</td>
-							
 							<td>Eric's Frienemy</td>
 							<td>Sept 16 2015</td>
 						</tr>
 						<tr>
 							<td>When Harry Met Sally</td>
-							
 							<td>Eric's Wife</td>
 							<td>Nov 9 2015</td>
 						</tr>
 						<tr>
 							<td>Bill & Ted's Excellent Adventure</td>
-							
 							<td>Eric</td>
 							<td>Dec 3 2015</td>
 						</tr>
 						<tr>
 							<td>Equilibrium</td>
-							
 							<td>Eric's Friend</td>
 							<td>Jan 26 2016</td>
 						</tr>
@@ -289,22 +316,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -316,8 +343,19 @@
 
 
 
-<!-- the Last 4 Page -->
-
+<!-- the Last 4 Page
+		container
+			#last4Page
+		image boxes
+			#img-num1
+			#img-num2
+			#img-num3
+			#img-num4
+		image boxes hyperlink
+			#img-hl1
+			#img=hl2
+			#img=hl3
+			#img=hl4 -->
 
 
 
@@ -353,22 +391,22 @@
 				<div class="row">
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img-hl1"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num1"></a>
 						</div>
 					</div>
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img=hl2"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num2"></a>
 						</div>
 					</div>
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img=hl3"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num3"></a>
 						</div>
 					</div>
 					<div class='col-md-3'>	
 						<div>
-							<a href="https://placeholder.com"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg'></a>
+							<a href="https://placeholder.com" id="img=hl4"><img src="http://via.placeholder.com/300x550" class='img-fluid img-thumbnail repsonsiveImg' id="img-num4"></a>
 						</div>
 					</div>
 				</div>
@@ -390,22 +428,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -417,7 +455,20 @@
 
 
 
-<!-- The Calendar Page -->
+<!-- The Calendar Page
+		container
+			#calendarPage
+		dropdown
+			#calendar-host-dd
+		inputs
+			#calendar-add-new-host
+			#calendar-movie-choice
+			#calendar-pick-date
+		button
+			#calendar-edit-button 
+		hyperlink
+			calendar-hl-->
+
 
 
 
@@ -445,7 +496,7 @@
 					<div class="shUnderline">
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> CALENDAR</span>
 					</div>
-					<select class="custom-select mb-1 border-0 amaticFont">
+					<select class="custom-select mb-1 border-0 amaticFont" id="calendar-host-dd">
 						<option selected >the Host</option>
 						<option value="2">Eric</option>
 						<option value="3">Eric's Wife</option>
@@ -454,16 +505,16 @@
 					</select>
 					<form>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Add New Host"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="calendar-add-new-host" placeholder="Add New Host"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Movie Choice"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="calendar-movie-choice" placeholder="Movie Choice"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Pick Date"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="calendar-pick-date" placeholder="Pick Date"></input>
 						</div>
 						<div >
-							<button type="submit" class="btn btn-light btnAmatic">Edit</button>
+							<button type="submit" class="btn btn-light btnAmatic" id="calendar-edit-button">Edit</button>
 						</div>
 					</form>
 				</div>
@@ -472,7 +523,7 @@
 		<div class='col-md-5 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com" id="calendar-hl"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
 				</div>
 			</div>
 		</div>
@@ -492,22 +543,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -517,7 +568,19 @@
 </div>
 
 
-<!-- the Memebers Page -->
+<!-- the Memebers Page
+		container
+			#memebersPage
+		drop downs
+			#members-name-dd
+		imputs
+			#members-fav-movie
+			#members-most-hate-movie
+			#members-last-pick-movie
+		button
+			#members-edit-btn
+		image
+			#member-img -->
 
 
 
@@ -545,7 +608,7 @@
 					<div class="shUnderline">
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> MEMEBERZ</span>
 					</div>
-					<select class="custom-select mb-1 border-0 amaticFont">
+					<select class="custom-select mb-1 border-0 amaticFont" id="members-name-dd">
 						<option selected >Name</option>
 						<option value="2">Eric</option>
 						<option value="3">Eric's Wife</option>
@@ -554,16 +617,16 @@
 					</select>
 					<form>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Favorite Movie"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="members-fav-movie" placeholder="Favorite Movie"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Most Hated Movie"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="members-most-hate-movie" placeholder="Most Hated Movie"></input>
 						</div>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Last Picked Movie"></input>
+							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="members-last-pick-movie" placeholder="Last Picked Movie"></input>
 						</div>
 						<div >
-							<button type="submit" class="btn btn-light btnAmatic">Edit</button>
+							<button type="submit" class="btn btn-light btnAmatic" id="members-edit-btn">Edit</button>
 						</div>
 					</form>
 				</div>
@@ -572,7 +635,7 @@
 		<div class='col-md-5 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com"><img src="http://via.placeholder.com/550x300" class='img-fluid img-thumbnail repsonsiveImg' id="member-img"></a>
 				</div>
 			</div>
 		</div>
@@ -592,22 +655,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -619,8 +682,13 @@
 
 
 
-<!-- The Last 4 trailer preview -->
-
+<!-- The Last 4 trailer preview
+		container
+			#last4TrailerPage
+		paragraph
+			#trailerz-movie-info
+		hyper link
+			#trailerz-movie-clip -->
 
 
 
@@ -648,14 +716,14 @@
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> TRAILERZ</span>
 						
 					</div>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p id="trailerz-movie-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 			</div>
 		</div>
 		<div class='col-md-7 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div class="ml-auto" >
-					<a href="https://placeholder.com"><img src="http://via.placeholder.com/750x350" class='img-fluid img-thumbnail repsonsiveImg'></a>
+					<a href="https://placeholder.com" id="trailerz-movie-clip"><img src="http://via.placeholder.com/750x350" class='img-fluid img-thumbnail repsonsiveImg'></a>
 				</div>
 			</div>
 		</div>
@@ -675,22 +743,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
@@ -702,13 +770,21 @@
 
 
 
-<!-- the ADD page -->
+<!-- the ADD page
+		container
+			#addPage
+		drop down
+			#add-host-dd
+		inputs
+			#add-title
+			#add-date
+		buttons
+			#add-btn -->
 
 
 
 
-
-<div id="memebersPage" class='container-fluid m-0 p-0 '>
+<div id="addPage" class='container-fluid m-0 p-0 '>
 	<div class='row header'>
 		<div class='col-md-11 d-flex' >
 			<div class=' w-100 p-0 m-0 d-flex align-items-end'>
@@ -725,46 +801,61 @@
 				</div>
 			</div>
 		</div>
-		<div class='col-md-10 d-flex pageContent'>
+		<div class='col-md-2 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div class='ml-auto'>
 					<div class="shUnderline">
 						<span class="smLogoAmatic">the </span><span class="smlFreckleFaceNO"> ADD</span>
 					</div>
-					<div class='col-md-2'>
-						<select class="custom-select mb-1 border-0 amaticFont">
-							<option selected >Host</option>
-							<option value="2">Eric</option>
-							<option value="3">Eric's Wife</option>
-							<option value="4">Eric's Friend</option>
-							<option value="5">Eric's Frienemy </option>
-						</select>
-					</div>
-					<div col-md-2>
-						<form>
-							<div>
-								<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Title"></input>
-							</div>
-						</form>
-					</div>
-					<div col-md-2>
-						<form>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-2 d-flex pageContent'>
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<select class="custom-select mb-1   amaticFont">
+						<option selected >Host</option>
+						<option value="2">Eric</option>
+						<option value="3">Eric's Wife</option>
+						<option value="4">Eric's Friend</option>
+						<option value="5">Eric's Frienemy </option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-2 d-flex pageContent'>
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<form>
 						<div>
-							<input type="movie" class="form-control border-0 mb-1 amaticFont" id="" placeholder="Date"></input>
+							<input type="movie" class="form-control  mb-1 amaticFont" id="" placeholder="Title"></input>
 						</div>
 					</form>
-					</div>	
-					<<div col-md-2>
-						<form>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-3 d-flex pageContent'>
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<form>
+						<div>
+							<input type="movie" class="form-control  mb-1 amaticFont" id="" placeholder="Date"></input>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-1 d-flex pageContent'>
+			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
+				<div class='ml-auto'>
+					<form>
 						<div >
 							<button type="submit" class="btn btn-light btnAmatic">ADD</button>
 						</div>
 					</form>
-					</div>
 				</div>
 			</div>
 		</div>
-		
 		<div class='col-md-1 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div class='ml-auto'>
@@ -781,22 +872,22 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent " >
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link" href="#">the list</a>
+							<a class="nav-link" href="#" data-page="#listPage">the list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">statz</a>
+							<a class="nav-link " href="#" data-page="#statz">statz</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">last 4</a>
+							<a class="nav-link " href="#" data-page="#last4Page">last 4</a>
 						</li>
 						<li class="nav-item amaticFont pl-4 pr-4">
-							<a class="nav-link " href="#">member list</a>
+							<a class="nav-link " href="#" data-page="#membersPage">list</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">calander</a>
+							<a class="nav-link " href="#" data-page="#calendar">calender</a>
 						</li>
 						<li class="nav-item amaticFont pl-4" >
-							<a class="nav-link " href="#">add</a>
+							<a class="nav-link " href="#" data-page="#add">add</a>
 						</li>
 					</ul>
 				</div>
