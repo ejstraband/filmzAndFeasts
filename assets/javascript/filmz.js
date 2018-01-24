@@ -42,15 +42,15 @@ $.ajax({
   }).done(function(response){
 
   console.log(response);
-	var rated = response.rated;
-  console.log(rating);
-	var genre = response.genre;
-  console.log("genre is" + genre);
-	var releaseYear = response.year;
-  console.log("release year is" + releaseYear);
-	var plot = response.plot;
-  console.log(plot);
-	var poster = response.poster;
+	var rated = response.Rated;
+  console.log("This movie is rated " + rated);
+	var genre = response.Genre;
+  console.log("The genre is " + genre);
+	var releaseYear = response.Year;
+  console.log("The release year is " + releaseYear);
+	var plot = response.Plot;
+  console.log("The plot is " + plot);
+	var poster = response.Poster;
   console.log(poster);
 
 	database.ref().push({
@@ -68,7 +68,7 @@ $.ajax({
 	  var rating = childSnapshot.val().rated;
 	  var genre = childSnapshot.val().genre;
     var releaseYear = childSnapshot.val().releaseYear;
-	  var trailer = childSnapshot.val().plot;
+	  var plot = childSnapshot.val().plot;
     var poster = childSnapshot.val().poster;
 
 		console.log(rated);
