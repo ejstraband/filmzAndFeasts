@@ -20,7 +20,7 @@
 
 // create a function to hide all divs
 function hideAllDiv(){
-$('#statzPage, #listPage, #last4Page, #calendarPage, #memebersPage, #last4TrailerPage, #landingPage, #addPage').each(function() {
+$('#statzPage, #listPage, #last4Page, #calendarPage, #membersPage, #last4TrailerPage, #landingPage, #addPage').each(function() {
 	$(this).hide();
 });
 }
@@ -32,10 +32,12 @@ hideAllDiv();
 $('#landingPage').show();
 // });
 
-// $("#statzPage").on("click", function() {
-//    hideAllDiv();
-//    $("#statzPage").show();
-// });
+$(document).on("click", '.nav-link', function() {
+   hideAllDiv();
+   var pageId = $(this).data().page;
+   console.log(pageId);
+   $(pageId).show();
+});
 
 // $("#listPage").click(function() {
 //     hideAllDiv();
