@@ -822,12 +822,16 @@ The Landing Page
 		<div class='col-md-2 d-flex pageContent'>
 			<div class=' w-100 p-0 m-0 d-flex align-items-center'>
 				<div class='ml-auto'>
-					<select class="custom-select mb-1   amaticFont">
+					<select id="host" class="custom-select mb-1   amaticFont">
 						<option selected >Host</option>
-						<option value="2">Eric</option>
-						<option value="3">Cathy</option>
-						<option value="4">Angie</option>
-						<option value="5">Rick</option>
+						<option value="Eric">Eric</option>
+						<option value="Cathy">Cathy</option>
+						<option value="Angie">Angie</option>
+						<option value="Rick">Rick</option>
+						<option value="Jackson">Jackson</option>
+						<option value="Caroline">Caroline</option>
+						<option value="Jill">Jill</option>
+						<option value="Chad">Chad</option>
 					</select>
 				</div>
 			</div>
@@ -837,7 +841,7 @@ The Landing Page
 				<div class='ml-auto'>
 					<form>
 						<div>
-							<input type="movie" class="form-control  mb-1 amaticFont" id="" placeholder="Title"></input>
+							<input type="movie" class="form-control  mb-1 amaticFont" id="movieTitle" placeholder="Title"></input>
 						</div>
 					</form>
 				</div>
@@ -848,7 +852,7 @@ The Landing Page
 				<div class='ml-auto'>
 					<form>
 						<div>
-							<input type="movie" class="form-control  mb-1 amaticFont" id="" placeholder="Date"></input>
+							<input type="date" class="form-control  mb-1 amaticFont" id="movieDate" placeholder="MM/DD/YYYY"></input>
 						</div>
 					</form>
 				</div>
@@ -859,7 +863,7 @@ The Landing Page
 				<div class='ml-auto'>
 					<form>
 						<div >
-							<button type="submit" class="btn btn-light btnAmatic">ADD</button>
+							<button id="add-btn" type="submit" class="btn btn-light btnAmatic">ADD</button>
 						</div>
 					</form>
 				</div>

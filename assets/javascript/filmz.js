@@ -25,11 +25,17 @@ var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Ch
     var database = firebase.database();
 
 
+$("#add-btn").on("click", function(event) {
+    // event.preventDefault();
+    addTheMovie = $("#movieTitle").val().trim();
+    console.log(addTheMovie);
+    addMovie();
+});
 
 function addMovie() {
 
-	var movie = $(this).attr("placeholder");
-	var queryURL = "http://www.omdbapi.com/?t=" + search + "&apikey=30d5e4a1";
+	// var movie = $(this).attr("placeholder");
+	var queryURL = "http://www.omdbapi.com/?t=" + addTheMovie + "&apikey=30d5e4a1";
   console.log(queryURL);
 
 $.ajax({
@@ -52,13 +58,21 @@ $.ajax({
   console.log("The plot is " + plot);
 	var poster = response.Poster;
   console.log(poster);
+  var host = document.getElementById("host").value;
+  console.log(host);
+  var date = document.getElementById("movieDate").value;
+  console.log(date);
 
-	database.ref().push({
+	database.ref().child('events').push({
 	    rated: rated,
 	    genre: genre,
 	    releaseYear: releaseYear,
 	    plot: plot,
-	    poster: poster
+	    poster: poster,
+      host: host,
+      date: date
+
+
 	});
 
 	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
