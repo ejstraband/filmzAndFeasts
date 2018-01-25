@@ -114,7 +114,7 @@ var watchedDate = undefined;
 var matchedHost = undefined;
 var referenceNotes = undefined;
 // Search for the movie in the events part of the database
-var searchFlicks;
+// var searchFlicks;
 
 function searchForFlick() {
   searchFlickRef = database.ref("events/");
@@ -155,8 +155,13 @@ function alertFunction() {
   }
 }
 
-searchForFlick();
-
+// search for a flick
+$("#search-btn").on("click", function(event) {
+    event.preventDefault();
+    searchFlick = $("#list-movie-selection").val().trim();
+    console.log(searchFlick);
+    searchForFlick();
+});
 
 // add event function
 var date;
