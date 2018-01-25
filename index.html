@@ -2,18 +2,27 @@
 <html>
 <head>
 	<title>filmzAndFEAST</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Freckle+Face" rel="stylesheet">
 	<!-- Added firebase -->
 	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
 	<!-- Added JQuery -->
 	<script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body class=''>
 	
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
 
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 <!-- Footer
@@ -130,9 +139,9 @@ The Landing Page
 						<option selected >Members</option>
 						<option value="1">All</option>
 						<option value="2">Eric</option>
-						<option value="3">Eric's Wife</option>
-						<option value="4">Eric's Friend</option>
-						<option value="5">Eric's Frienemy </option>
+						<option value="3">Cathy</option>
+						<option value="4">Angie</option>
+						<option value="5">Rick</option>
 					</select><br>
 					<select id="statz-rating-dd" class="custom-select mb-3 border-0 amaticFont">
 						<option selected>Rating</option>
@@ -278,12 +287,12 @@ The Landing Page
 					<tbody id="list-table" class="amaticFontNB">
 						<tr>
 							<td>the Terminator</td>
-							<td>Eric's Frienemy</td>
+							<td>Rick</td>
 							<td>Sept 16 2015</td>
 						</tr>
 						<tr>
 							<td>When Harry Met Sally</td>
-							<td>Eric's Wife</td>
+							<td>Cathy</td>
 							<td>Nov 9 2015</td>
 						</tr>
 						<tr>
@@ -293,7 +302,7 @@ The Landing Page
 						</tr>
 						<tr>
 							<td>Equilibrium</td>
-							<td>Eric's Friend</td>
+							<td>Angie</td>
 							<td>Jan 26 2016</td>
 						</tr>
 					</tbody>
@@ -499,9 +508,9 @@ The Landing Page
 					<select class="custom-select mb-1 border-0 amaticFont" id="calendar-host-dd">
 						<option selected >the Host</option>
 						<option value="2">Eric</option>
-						<option value="3">Eric's Wife</option>
-						<option value="4">Eric's Friend</option>
-						<option value="5">Eric's Frienemy </option>
+						<option value="3">Cathy</option>
+						<option value="4">Angie</option>
+						<option value="5">Rick</option>
 					</select>
 					<form>
 						<div>
@@ -611,9 +620,9 @@ The Landing Page
 					<select class="custom-select mb-1 border-0 amaticFont" id="members-name-dd">
 						<option selected >Name</option>
 						<option value="2">Eric</option>
-						<option value="3">Eric's Wife</option>
-						<option value="4">Eric's Friend</option>
-						<option value="5">Eric's Frienemy </option>
+						<option value="3">Cathy</option>
+						<option value="4">Angie</option>
+						<option value="5">Rick</option>
 					</select>
 					<form>
 						<div>
@@ -816,9 +825,9 @@ The Landing Page
 					<select class="custom-select mb-1   amaticFont">
 						<option selected >Host</option>
 						<option value="2">Eric</option>
-						<option value="3">Eric's Wife</option>
-						<option value="4">Eric's Friend</option>
-						<option value="5">Eric's Frienemy </option>
+						<option value="3">Cathy</option>
+						<option value="4">Angie</option>
+						<option value="5">Rick</option>
 					</select>
 				</div>
 			</div>
@@ -895,6 +904,55 @@ The Landing Page
 		</div>
 	</div>
 </div>
+
+<!-- alert modal 1: not found -->
+
+    <div class="modal" id="movieMissingModal" tabindex="-1" role="dialog">
+       <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h4 class="modal-title text-white">Movie Not Found. This is a New One!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="missing-movie-modal ml-3 mt-3">
+              </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Woohoo!</button>
+              </div>
+             </div>
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+<!-- alert modal 2: movie found -->
+
+    <div class="modal" id="movieFoundModal" tabindex="-1" role="dialog">
+       <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h4 class="modal-title text-white">Movie Found</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="found-movie-modal ml-3 mt-3">
+              </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Try Again</button>
+              </div>
+             </div>
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
 
 <!-- added our Javascript -->
 <script type="text/javascript" src="assets/javascript/filmz.js"></script>
