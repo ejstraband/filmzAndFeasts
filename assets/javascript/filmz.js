@@ -5,9 +5,9 @@
 // <script>
 
 // starter Variables for the UI Form
-var newMovie;
-var currentDate;
-var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Chad"];
+// var newMovie;
+// var currentDate;
+// var host = ["Cathy", "Eric", "Angie", "Rick", "Jackson", "Caroline", "Jill", "Chad"];
 
 
 // Initialize Firebase
@@ -58,6 +58,8 @@ $.ajax({
   console.log("The plot is " + plot);
 	var poster = response.Poster;
   console.log(poster);
+  var movie = response.Title;
+  console.log(poster);
   var host = document.getElementById("host").value;
   console.log(host);
   var date = document.getElementById("movieDate").value;
@@ -69,6 +71,7 @@ $.ajax({
 	    releaseYear: releaseYear,
 	    plot: plot,
 	    poster: poster,
+      movie: movie,
       host: host,
       date: date
 
@@ -77,19 +80,15 @@ $.ajax({
 
 	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-	  console.log(childSnapshot.val());
-
 	  var rating = childSnapshot.val().rated;
 	  var genre = childSnapshot.val().genre;
     var releaseYear = childSnapshot.val().releaseYear;
 	  var plot = childSnapshot.val().plot;
     var poster = childSnapshot.val().poster;
 
-		console.log(rated);
-		console.log(genre);
-		console.log(releaseYear);
-		console.log(plot);
-		console.log(poster);
+    location.reload();
+
+		
   });
 
 });
@@ -203,3 +202,30 @@ database.ref().child('events').push({
 //   synopsis: synopsis
 //   });
 // }
+
+// Find the last four movies.
+var lastFourRef = firebase.database().ref("events");
+var counter = 1;
+lastFourRef.orderByChild("events").limitToLast(4).on("child_added", function(snapshot) {
+  var lastMovie = snapshot.val().movie;
+  var lastHost = snapshot.val().host;
+  var lastDate = snapshot.val().date;
+  var lastPoster = snapshot.val().poster;
+
+  document.getElementById('img-num' + counter).src = lastPoster;
+  document.getElementById('rT' + counter).innerHTML = lastMovie;
+  document.getElementById('rH' + counter).innerHTML = lastHost;
+  document.getElementById('rD' + counter).innerHTML = lastDate;
+
+  console.log(lastMovie);
+  console.log(lastHost);
+  console.log(lastDate);
+  console.log(lastPoster);
+
+  counter++;
+
+});
+
+
+
+
