@@ -82,7 +82,23 @@ $.ajax({
 
 }
 
+// Modal Alert Code
 
+// <!--MoDAL ALERT FOR MOVIE NOT FOUND.-->
+  function movieNotFoundModal() {
+  $(document).ready(function(){
+  $(".missing-movie-modal").html("<p>"+ " Looks like a new one!");
+  $('#movieMissingModal').modal();
+});
+}
+
+// <!--MoDAL ALERT FOR MOVIE FOUND.-->
+  function movieFoundModal() {
+  $(document).ready(function(){
+  $(".found-movie-modal").html("<p>"+ "Movie already watched .. please try again.");
+  $('#movieFoundModal').modal();
+});
+}
 // search functions
 // got a lot of help from https://www.tutorialspoint.com/firebase/firebase_queries.htm
 
@@ -132,9 +148,10 @@ function searchForFlick() {
 
 function alertFunction() {
   if (matchedTitle) {
-  alert("new movie");
+  // alert("new movie");
+  movieNotFoundModal();
 } else {
-  alert("movie matched");
+  movieFoundModal();
   }
 }
 
